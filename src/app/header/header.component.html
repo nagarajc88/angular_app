@@ -1,0 +1,52 @@
+<!-- main app container -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+<header class="header">
+<div class="container">
+<div class="row">
+<div class="offset6 span6 right-align loginArea">
+  <span  class="btn btn-mini" id="logout"><a routerLink="login">Logout</a></span>
+  <span  routerLink="login" class="btn btn-mini" id="login">Login</span>
+  <a href="register.php"><span class="btn btn-mini btn-success"> Register  </span></a>
+  <a href="checkout.php"><span class="btn btn-mini btn-danger"> Cart [2] </span></a>
+</div>
+</div>
+
+<div class="navbar">
+<div class="navbar-inner">
+<!-- <a class="brand" href="index.php"><img src="assets/themes/images/new_logo.png" alt="Bootsshop"></a> -->
+<a href="">My Cart</a>
+<div class="nav-collapse">
+  <ul id="topMenu" class="nav pull-right">
+   <li class="">
+   <form class="form-inline navbar-search" method="post" action="products.php" style="padding-top:5px;">
+    <select class="span3" style="padding:11px 4px; height:auto">
+      <option>All</option>
+      <option>Clothes </option>
+      <option>Women's Wear </option>
+      <option>Men's Wear </option>
+      <option>Kids Wear </option>
+    </select>
+    <input class="span4" type="text" placeholder="eg. T-shirt" style="padding:11px 4px;">
+    <button type="submit" class="btn btn-warning btn-large" style="margin-top:0"> GO </button>
+  </form>
+  </li>
+  </ul>
+</div>
+<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<!-- ======================================================================================================================== -->

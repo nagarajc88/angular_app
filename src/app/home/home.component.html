@@ -1,12 +1,285 @@
-<div class="col-md-6 col-md-offset-3">
-    <h1>Hi {{currentUser.user.name}}!</h1>
-    <p>You're logged in with Angular 2!!</p>
-    <h3>All registered users:</h3>
-    <ul>
-        <!-- <li *ngFor="let user of users">
-            {{user.username}} ({{user.firstName}} {{user.lastName}})
-            - <a (click)="deleteUser(user.id)">Delete</a>
-        </li> -->
-    </ul>
-    <p><a [routerLink]="['/login']">Logout</a></p>
+<!-- ======================================================================================================================== -->
+<div class="container">
+<section id="mainCarousel">
+    <div class="displayStyle">
+    <div id="myCarousel" class="carousel slide">
+        <span class="newTag tagRight"></span>
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ol>
+            <div class="carousel-inner">
+            <div *ngFor= "let image of images; let index = index" [class.active]="index == 0" class="item">
+                <div class="row">
+                    <div class="span6">
+                        <img src="{{image.url}}" alt="#" />
+                    </div>
+                    <div class="span6">
+                        <div class="promoDetail">
+                                  <h1>{{image.title}}</h1>
+                                  <p>{{image.category}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+              
+             
+            </div>
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+    </div>
+    </div>
+</section>
+
+<section id="featuredProduct">
+<h3 class="title"><span>New Products</span></h3>
+<div id="myCarouselOne" class="carousel slide">
+    <!-- Dot Indicators -->
+    <div class="carousel-inner">
+    <div class="item active">
+        <div class="row">
+            <div class="span3" *ngFor="let fproductlist of firstproductlist" >
+                <div class="well well-small">
+                    <span class="newTag"></span>
+                    <span class="priceTag">
+                        <small class="oldPrice"><small>$</small>{{fproductlist.price}}</small>
+                        <span class="newPrice"><small>$</small>{{fproductlist.sp_price}}</span>
+                    </span>
+                     <!-- <a *ngIf="fproductlist?.image_name" class="displayStyle" href="#">
+                         <img src="{{apiUrl}}backend/images/products/{{fproductlist.product_id}}/m/{{fproductlist.image_name}}" alt="#"/>
+                      </a> -->
+                      <!-- *ngIf="!fproductlist?.image_name" -->
+                     <a class="displayStyle" href="#">  
+                       <img  src="{{apiUrl}}backend/noproduct.jpeg" alt="#"/>
+                     </a>
+                    <h5>Clothings</h5>
+                    <p>
+                        <a class="btn btn-warning" href="#" > Add to <i class="icon-shopping-cart"></i></a> 
+                        <a class="btn" href="details.php">view details</a>
+                    </p>
+                    <p><span class="price"><small>$</small>{{fproductlist.sp_price}}</span></p>
+                    
+                </div>
+            </div>          
+        </div>
+    </div>
+    <div class="item">
+       <div class="row">
+            <div class="span3" *ngFor="let sproductlist of secondproductlist" >
+                <div class="well well-small">
+                    <span class="newTag"></span>
+                    <span class="priceTag">
+                        <small class="oldPrice"><small>$</small>{{sproductlist.price}}</small>
+                        <span class="newPrice"><small>$</small>{{sproductlist.sp_price}}</span>
+                    </span>
+                    <!--  <a *ngIf="sproductlist?.image_name" class="displayStyle" href="#">
+                         <img src="{{apiUrl}}backend/images/products/{{sproductlist.product_id}}/m/{{sproductlist.image_name}}" alt="#"/>
+                      </a> -->
+                      <!-- *ngIf="!sproductlist?.image_name" -->
+                     <a  class="displayStyle" href="#">  
+                       <img  src="{{apiUrl}}backend/noproduct.jpeg" alt="#"/>
+                     </a>
+                    <h5>Clothings</h5>
+                    <p>
+                        <a class="btn btn-warning" href="#" > Add to <i class="icon-shopping-cart"></i></a> 
+                        <a class="btn" href="details.php">view details</a>
+                    </p>
+                    <p><span class="price"><small>$</small>{{sproductlist.sp_price}}</span></p>
+                    
+                </div>
+            </div> 
+       </div>
+    </div>
+    <div class="item">
+       <div class="row">
+            <div class="span3" *ngFor="let tproductlist of thirdproductlist" >
+                <div class="well well-small">
+                    <span class="newTag"></span>
+                    <span class="priceTag">
+                        <small class="oldPrice"><small>$</small>{{tproductlist.price}}</small>
+                        <span class="newPrice"><small>$</small>{{tproductlist.sp_price}}</span>
+                    </span>
+                     <!-- <a *ngIf="tproductlist?.image_name" class="displayStyle" href="#">
+                         <img src="{{apiUrl}}backend/images/products/{{tproductlist.product_id}}/m/{{tproductlist.image_name}}" alt="#"/>
+                      </a> -->
+                      <!-- *ngIf="!tproductlist?.image_name" -->
+                     <a  class="displayStyle" href="#">  
+                       <img  src="{{apiUrl}}backend/noproduct.jpeg" alt="#"/>
+                     </a>
+                    <h5>Clothings</h5>
+                    <p>
+                        <a class="btn btn-warning" href="#" > Add to <i class="icon-shopping-cart"></i></a> 
+                        <a class="btn" href="details.php">view details</a>
+                    </p>
+                    <p><span class="price"><small>$</small>{{tproductlist.sp_price}}</span></p>
+                    
+                </div>
+            </div> 
+       </div>
+    </div>
+
+    </div>
+        <a class="left carousel-control" href="#myCarouselOne" data-slide="prev">‹</a>
+        <a class="right carousel-control" href="#myCarouselOne" data-slide="next">›</a>
 </div>
+        
+<h3 class="title"><span>Popular Items</span></h3>
+<div id="showCase" class="row">
+<div class="span2">
+<div class="carousel slide">
+    <div class="carousel-inner">
+        <div *ngFor= "let fpopularproductlist of firstpopularproductlist; let index = index" [class.active]="index == 0" class="item">
+            <!-- <a  *ngIf="fpopularproductlist?.image_name" href="details.php" ><img src="{{apiUrl}}backend/images/products/{{fpopularproductlist.product_id}}/m/{{fpopularproductlist.image_name}}" alt="#"/>
+            View Details</a> -->
+            <!-- *ngIf="!fpopularproductlist?.image_name" -->
+            <a   href="details.php" ><img src="{{apiUrl}}backend/noproduct.jpeg" alt="#"/>
+            View Details</a>
+         </div>
+     </div>
+   </div>
+</div>
+<div class="span2">
+<div class="carousel slide">
+    <div class="carousel-inner">
+        <div *ngFor= "let spopularproductlist of secondpopularproductlist; let index = index" [class.active]="index == 0" class="item">
+            <!-- <a  *ngIf="spopularproductlist?.image_name" href="details.php" ><img src="{{apiUrl}}backend/images/products/{{spopularproductlist.product_id}}/m/{{spopularproductlist.image_name}}" alt="#"/>
+            View Details</a> -->
+            <!-- *ngIf="!spopularproductlist?.image_name" -->
+            <a  href="details.php" ><img src="{{apiUrl}}backend/noproduct.jpeg" alt="#"/>
+            View Details</a>
+         </div>
+    </div>
+</div>
+</div>
+<div class="span2">
+<div class="carousel slide">
+    <div class="carousel-inner">
+        <div *ngFor= "let tpopularproductlist of thirdpopularproductlist; let index = index" [class.active]="index == 0" class="item">
+            <!-- <a  *ngIf="tpopularproductlist?.image_name" href="details.php" ><img src="{{apiUrl}}backend/images/products/{{tpopularproductlist.product_id}}/m/{{tpopularproductlist.image_name}}" alt="#"/>
+            View Details</a> -->
+            <!-- *ngIf="!tpopularproductlist?.image_name"  -->
+            <a  href="details.php" ><img src="{{apiUrl}}backend/noproduct.jpeg" alt="#"/>
+            View Details</a>
+         </div>
+    </div>
+</div>
+</div>
+<div class="span2">
+<div class="carousel slide">
+    <div class="carousel-inner">
+            <div *ngFor= "let fopopularproductlist of fourpopularproductlist; let index = index" [class.active]="index == 0" class="item">
+              <!-- <a  *ngIf="fopopularproductlist?.image_name" href="details.php" ><img src="{{apiUrl}}backend/images/products/{{fopopularproductlist.product_id}}/m/{{fopopularproductlist.image_name}}" alt="#"/>
+            View Details</a> -->
+            <!-- *ngIf="!fopopularproductlist?.image_name"  -->
+              <a  href="details.php" ><img src="{{apiUrl}}backend/noproduct.jpeg" alt="#"/>
+            View Details</a>
+         </div>
+    </div>
+</div>
+</div>
+<div class="span2">
+<div class="carousel slide">
+    <div class="carousel-inner">
+            <div *ngFor= "let fivpopularproductlist of fivepopularproductlist; let index = index" [class.active]="index == 0" class="item">
+            <!-- <a  *ngIf="fivpopularproductlist?.image_name" href="details.php" ><img src="{{apiUrl}}backend/images/products/{{fivpopularproductlist.product_id}}/m/{{fivpopularproductlist.image_name}}" alt="#"/>
+            View Details</a> -->
+            <!-- *ngIf="!fivpopularproductlist?.image_name"  -->
+            <a  href="details.php" ><img src="{{apiUrl}}backend/noproduct.jpeg" alt="#"/>
+            View Details</a>
+         </div>
+    </div>
+</div>
+</div>
+<div class="span2">
+<div class="carousel slide">
+    <div class="carousel-inner">
+            <div *ngFor= "let sipopularproductlist of sixpopularproductlist; let index = index" [class.active]="index == 0" class="item">
+            <!-- <a  *ngIf="sipopularproductlist?.image_name" href="details.php" ><img src="{{apiUrl}}backend/images/products/{{sipopularproductlist.product_id}}/m/{{sipopularproductlist.image_name}}" alt="#"/>
+            View Details</a> -->
+             <!-- *ngIf="!sipopularproductlist?.image_name"  -->
+            <a href="details.php" ><img src="{{apiUrl}}backend/noproduct.jpeg" alt="#"/>
+            View Details</a>
+         </div>
+    </div>
+</div>
+</div>
+</div>
+
+</section>
+<section id="scn">
+<h3 class="title"><span>WELCOME !</span></h3>
+<div class="row">
+    <div class="span4">
+    <h1><i class="icon-heart"></i> </h1>
+    <h4>Who we are?</h4>    
+    <p>Bootstrapapge.com helping you to design you a professional website.Converting PSD to XHTML & CSS. Even more in Graphic Design such as Coverpage, Logo etc. </p>
+    <p>We are helping you to design you a professional website.Converting PSD to XHTML & CSS. Even more in Graphic Design such as Coverpage </p>
+    </div>
+    <div class="span4">
+    <div class="seperator">
+        <h1><i class="icon-truck iconShipping"></i> </h1>       
+        <h4>Shipping Information</h4>       
+        <p>If you are looking for upgrade your website for mobiles and tablets, Even if you do not have any website. Remember! bootsttrappage.com will come to make your dreams true.</p>
+        <p class="shipping"><span class="shippingCall">Free Shipping On Orders Over $400</span></p>
+    </div>
+    </div>
+    <div class="span4">
+        <h1><i class="icon-comments-alt"></i> </h1>
+        <h4>Find us in</h4>
+        <p class="findUs">
+            <a href="#"><i class="icon-facebook"></i> </a>
+            <a href="#"><i class="icon-twitter"></i> </a>
+            <a href="#"><i class="icon-google-plus"></i> </a>
+        </p>
+        <h4>Subscribe us</h4>   
+        <div class="caption">
+        <p> Subscribe us for our newsletters</p>
+        <form class="">
+          <div class="control-group">
+            <div class="controls">
+              <input type="text" id="userEmail" placeholder="eg: info:bootstrappage.com">
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="controls">
+              <button type="submit" class="btn btn-success ">subscribe</button>
+            </div>
+          </div>
+        </form>
+    </div>
+</div>
+</div>
+</section>
+<hr class="soften"/>
+<section id="client">
+<h3 class="title"><span>BRANDS</span></h3>
+<div id="clients" class="carousel slide">
+        <div class="carousel-inner">
+        <div class="item active">
+        <div class="span12">
+        <img src="assets/themes/images/clients/1.png" alt="#" />
+        <img src="assets/themes/images/clients/2.png" alt="#" />
+        <img src="assets/themes/images/clients/3.png" alt="#" />
+        <img src="assets/themes/images/clients/4.png" alt="#" />
+        <img src="assets/themes/images/clients/5.png" alt="#" />
+        <img src="assets/themes/images/clients/6.png" alt="#" />
+        </div>
+        </div>
+        <div class="item">
+        <div class="span12">
+        <img src="assets/themes/images/clients/1.png" alt="#" />
+        <img src="assets/themes/images/clients/8.png" alt="#" />
+        <img src="assets/themes/images/clients/9.png" alt="#" />
+        <img src="assets/themes/images/clients/10.png" alt="#" />
+        <img src="assets/themes/images/clients/11.png" alt="#" />
+        <img src="assets/themes/images/clients/12.png" alt="#" />
+        </div>
+        </div>
+</div>
+    <a class="left carousel-control" href="#clients" data-slide="prev">‹</a>
+    <a class="right carousel-control" href="#clients" data-slide="next">›</a>
+</div>
+</section>
+</div>
+  
