@@ -9,16 +9,6 @@ import { UserService } from './_services/index';
 })
 export class AppComponent {
   title = 'app';
-  token: User;
-  currentUser: User;
-  users: User[] = [];
-   $: any;
-
-  constructor() {
-
-      this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
-      this.token = this.currentUser;
-  }
-
+  constructor() {}
   ngOnInit() { }
 }

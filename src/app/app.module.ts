@@ -8,7 +8,7 @@ import { routing }        from './app.routing';
 
 import { AlertComponent } from './_directives/index';
 import { AuthGuard } from './_guards/index';
-import { AlertService, AuthenticationService, UserService,HomeService,ImageService } from './_services/index';
+import { HeaderService, AlertService, AuthenticationService, UserService,HomeService,ImageService } from './_services/index';
 import { DetailService } from './_services/index';
 
 import { LoginComponent } from './login/index';
@@ -16,7 +16,7 @@ import { HomeComponent } from './home/index';
 import { DetailComponent } from './details/index';
 
 import { RegisterComponent } from './register/index';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './header/index';
 import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
@@ -37,6 +37,7 @@ import { FooterComponent } from './footer/footer.component';
         FooterComponent
     ],
     providers: [
+        HeaderService,
         AuthGuard,
         AlertService,
         AuthenticationService,
