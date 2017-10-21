@@ -11,42 +11,239 @@
 <header class="header">
 <div class="container">
 <div class="row">
-<div class="offset6 span6 right-align loginArea">
-  <span  class="btn btn-mini" id="logout"><a routerLink="login">Logout</a></span>
-  <span  routerLink="login" class="btn btn-mini" id="login">Login</span>
-  <a href="register.php"><span class="btn btn-mini btn-success"> Register  </span></a>
-  <a href="checkout.php"><span class="btn btn-mini btn-danger"> Cart [2] </span></a>
-</div>
-</div>
-
-<div class="navbar">
-<div class="navbar-inner">
-<!-- <a class="brand" href="index.php"><img src="assets/themes/images/new_logo.png" alt="Bootsshop"></a> -->
-<a href="">My Cart</a>
-<div class="nav-collapse">
+<div class="span8">
   <ul id="topMenu" class="nav pull-right">
    <li class="">
    <form class="form-inline navbar-search" method="post" action="products.php" style="padding-top:5px;">
-    <select class="span3" style="padding:11px 4px; height:auto">
+    <select class="span3" style="padding:5px 3px; height:auto">
       <option>All</option>
       <option>Clothes </option>
       <option>Women's Wear </option>
       <option>Men's Wear </option>
       <option>Kids Wear </option>
     </select>
-    <input class="span4" type="text" placeholder="eg. T-shirt" style="padding:11px 4px;">
-    <button type="submit" class="btn btn-warning btn-large" style="margin-top:0"> GO </button>
+    <input class="span4" type="text" placeholder="eg. T-shirt" style="padding:4px 3px;">
+    <button type="submit" class="btn btn-warning btn-small" style="margin-top:0"> GO </button>
   </form>
   </li>
   </ul>
 </div>
-<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-  <span class="icon-bar"></span>
-  <span class="icon-bar"></span>
-  <span class="icon-bar"></span>
-</button>
+ <div class="span4 right-align loginArea" style="margin-top:8px;">
+  <span  class="btn btn-mini" id="logout"><a routerLink="login">Logout</a></span>
+  <span  routerLink="login" class="btn btn-mini" id="login">Login</span>
+  <a href="register.php"><span class="btn btn-mini btn-success"> Register  </span></a>
+  <a href="checkout.php"><span class="btn btn-mini btn-danger"> Cart [2] </span></a>
 </div>
 </div>
 </div>
+<div class="navbar" style="background: black;">
+  <div class="navbar-inner">
+    <a class="brand" href="#">My Cart</a>
+    <ul class="nav">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Home<b class="caret"></b></a>
+              <ul class="dropdown-menu multi-column columns-3">
+                <div class="row">
+                  <div class="span3">
+                    <ul class="multi-column-dropdown">
+                      <li><a href="#">Action</a></li>
+                      <li><a href="#">Another action</a></li>
+                      <li><a href="#">Something else here</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">Separated link</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">One more separated link</a></li>
+                    </ul>
+                  </div>
+                  <div class="span3">
+                    <ul class="multi-column-dropdown">
+                      <li><a href="#">Action</a></li>
+                      <li><a href="#">Another action</a></li>
+                      <li><a href="#">Something else here</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">Separated link</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">One more separated link</a></li>
+                    </ul>
+                  </div>
+                  <div class="span3">
+                    <ul class="multi-column-dropdown">
+                      <li><a href="#">Action</a></li>
+                      <li><a href="#">Another action</a></li>
+                      <li><a href="#">Something else here</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">Separated link</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">One more separated link</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </ul>
+          </li>
+           <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account<b class="caret"></b></a>
+              <ul class="dropdown-menu multi-column columns-3">
+                <div class="row">
+                  <div class="span3">
+                    <ul class="multi-column-dropdown">
+                      <li><a href="#">Action</a></li>
+                      <li><a href="#">Another action</a></li>
+                      <li><a href="#">Something else here</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">Separated link</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">One more separated link</a></li>
+                    </ul>
+                  </div>
+                  <div class="span3">
+                    <ul class="multi-column-dropdown">
+                      <li><a href="#">Action</a></li>
+                      <li><a href="#">Another action</a></li>
+                      <li><a href="#">Something else here</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">Separated link</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">One more separated link</a></li>
+                    </ul>
+                  </div>
+                  <div class="span3">
+                    <ul class="multi-column-dropdown">
+                      <li><a href="#">Action</a></li>
+                      <li><a href="#">Another action</a></li>
+                      <li><a href="#">Something else here</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">Separated link</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">One more separated link</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </ul>
+          </li>
+           <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Living<b class="caret"></b></a>
+              <ul class="dropdown-menu multi-column columns-3">
+                <div class="row">
+                  <div class="span3">
+                    <ul class="multi-column-dropdown">
+                      <li><a href="#">Action</a></li>
+                      <li><a href="#">Another action</a></li>
+                      <li><a href="#">Something else here</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">Separated link</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">One more separated link</a></li>
+                    </ul>
+                  </div>
+                  <div class="span3">
+                    <ul class="multi-column-dropdown">
+                      <li><a href="#">Action</a></li>
+                      <li><a href="#">Another action</a></li>
+                      <li><a href="#">Something else here</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">Separated link</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">One more separated link</a></li>
+                    </ul>
+                  </div>
+                  <div class="span3">
+                    <ul class="multi-column-dropdown">
+                      <li><a href="#">Action</a></li>
+                      <li><a href="#">Another action</a></li>
+                      <li><a href="#">Something else here</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">Separated link</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">One more separated link</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </ul>
+          </li>
+           <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Test<b class="caret"></b></a>
+              <ul class="dropdown-menu multi-column columns-3">
+                <div class="row">
+                  <div class="span3">
+                    <ul class="multi-column-dropdown">
+                      <li><a href="#">Action</a></li>
+                      <li><a href="#">Another action</a></li>
+                      <li><a href="#">Something else here</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">Separated link</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">One more separated link</a></li>
+                    </ul>
+                  </div>
+                  <div class="span3">
+                    <ul class="multi-column-dropdown">
+                      <li><a href="#">Action</a></li>
+                      <li><a href="#">Another action</a></li>
+                      <li><a href="#">Something else here</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">Separated link</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">One more separated link</a></li>
+                    </ul>
+                  </div>
+                  <div class="span3">
+                    <ul class="multi-column-dropdown">
+                      <li><a href="#">Action</a></li>
+                      <li><a href="#">Another action</a></li>
+                      <li><a href="#">Something else here</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">Separated link</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">One more separated link</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </ul>
+          </li>    
+          <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Develop<b class="caret"></b></a>
+              <ul class="dropdown-menu multi-column columns-3">
+                <div class="row">
+                  <div class="span3">
+                    <ul class="multi-column-dropdown">
+                      <li><a href="#">Action</a></li>
+                      <li><a href="#">Another action</a></li>
+                      <li><a href="#">Something else here</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">Separated link</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">One more separated link</a></li>
+                    </ul>
+                  </div>
+                  <div class="span3">
+                    <ul class="multi-column-dropdown">
+                      <li><a href="#">Action</a></li>
+                      <li><a href="#">Another action</a></li>
+                      <li><a href="#">Something else here</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">Separated link</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">One more separated link</a></li>
+                    </ul>
+                  </div>
+                  <div class="span3">
+                    <ul class="multi-column-dropdown">
+                      <li><a href="#">Action</a></li>
+                      <li><a href="#">Another action</a></li>
+                      <li><a href="#">Something else here</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">Separated link</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">One more separated link</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </ul>
+          </li>
+   </ul>
+  </div>
+</div>
+
 </header>
+
 <!-- ======================================================================================================================== -->

@@ -9,8 +9,12 @@ import { routing }        from './app.routing';
 import { AlertComponent } from './_directives/index';
 import { AuthGuard } from './_guards/index';
 import { AlertService, AuthenticationService, UserService,HomeService,ImageService } from './_services/index';
-import { HomeComponent } from './home/index';
+import { DetailService } from './_services/index';
+
 import { LoginComponent } from './login/index';
+import { HomeComponent } from './home/index';
+import { DetailComponent } from './details/index';
+
 import { RegisterComponent } from './register/index';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -24,9 +28,10 @@ import { FooterComponent } from './footer/footer.component';
     ],
     declarations: [
         AppComponent,
-        AlertComponent,
-        HomeComponent,
         LoginComponent,
+        HomeComponent,
+        DetailComponent,
+        AlertComponent,
         RegisterComponent,
         HeaderComponent,
         FooterComponent
@@ -37,7 +42,8 @@ import { FooterComponent } from './footer/footer.component';
         AuthenticationService,
         UserService,
         ImageService,
-        HomeService
+        HomeService,
+        DetailService
     ],
     bootstrap: [AppComponent]
 })

@@ -16,11 +16,14 @@
                         <img src="{{image.url}}" alt="#" />
                     </div>
                     <div class="span6">
+                        <img src="{{image.url}}" alt="#" />
+                    </div>
+                    <!-- <div class="span6">
                         <div class="promoDetail">
                                   <h1>{{image.title}}</h1>
                                   <p>{{image.category}}</p>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
               
@@ -56,7 +59,7 @@
                     <h5>Clothings</h5>
                     <p>
                         <a class="btn btn-warning" href="#" > Add to <i class="icon-shopping-cart"></i></a> 
-                        <a class="btn" href="details.php">view details</a>
+                        <a class="btn" routerLink="product-details/{{fproductlist.product_id}}">view details</a>
                     </p>
                     <p><span class="price"><small>$</small>{{fproductlist.sp_price}}</span></p>
                     
@@ -83,7 +86,7 @@
                     <h5>Clothings</h5>
                     <p>
                         <a class="btn btn-warning" href="#" > Add to <i class="icon-shopping-cart"></i></a> 
-                        <a class="btn" href="details.php">view details</a>
+                        <a class="btn" href="product-details/{{sproductlist.product_id}}">view details</a>
                     </p>
                     <p><span class="price"><small>$</small>{{sproductlist.sp_price}}</span></p>
                     
@@ -110,7 +113,7 @@
                     <h5>Clothings</h5>
                     <p>
                         <a class="btn btn-warning" href="#" > Add to <i class="icon-shopping-cart"></i></a> 
-                        <a class="btn" href="details.php">view details</a>
+                        <a class="btn" href="product-details/{{tproductlist.product_id}}">view details</a>
                     </p>
                     <p><span class="price"><small>$</small>{{tproductlist.sp_price}}</span></p>
                     
@@ -133,7 +136,7 @@
             <!-- <a  *ngIf="fpopularproductlist?.image_name" href="details.php" ><img src="{{apiUrl}}backend/images/products/{{fpopularproductlist.product_id}}/m/{{fpopularproductlist.image_name}}" alt="#"/>
             View Details</a> -->
             <!-- *ngIf="!fpopularproductlist?.image_name" -->
-            <a   href="details.php" ><img src="{{apiUrl}}backend/noproduct.jpeg" alt="#"/>
+            <a   href="product-details/{{fpopularproductlist.product_id}}" ><img src="{{apiUrl}}backend/noproduct.jpeg" alt="#"/>
             View Details</a>
          </div>
      </div>
@@ -146,7 +149,7 @@
             <!-- <a  *ngIf="spopularproductlist?.image_name" href="details.php" ><img src="{{apiUrl}}backend/images/products/{{spopularproductlist.product_id}}/m/{{spopularproductlist.image_name}}" alt="#"/>
             View Details</a> -->
             <!-- *ngIf="!spopularproductlist?.image_name" -->
-            <a  href="details.php" ><img src="{{apiUrl}}backend/noproduct.jpeg" alt="#"/>
+            <a  href="product-details/{{spopularproductlist.product_id}}" ><img src="{{apiUrl}}backend/noproduct.jpeg" alt="#"/>
             View Details</a>
          </div>
     </div>
@@ -159,7 +162,7 @@
             <!-- <a  *ngIf="tpopularproductlist?.image_name" href="details.php" ><img src="{{apiUrl}}backend/images/products/{{tpopularproductlist.product_id}}/m/{{tpopularproductlist.image_name}}" alt="#"/>
             View Details</a> -->
             <!-- *ngIf="!tpopularproductlist?.image_name"  -->
-            <a  href="details.php" ><img src="{{apiUrl}}backend/noproduct.jpeg" alt="#"/>
+            <a  href="product-details/{{tpopularproductlist.product_id}}" ><img src="{{apiUrl}}backend/noproduct.jpeg" alt="#"/>
             View Details</a>
          </div>
     </div>
@@ -172,7 +175,7 @@
               <!-- <a  *ngIf="fopopularproductlist?.image_name" href="details.php" ><img src="{{apiUrl}}backend/images/products/{{fopopularproductlist.product_id}}/m/{{fopopularproductlist.image_name}}" alt="#"/>
             View Details</a> -->
             <!-- *ngIf="!fopopularproductlist?.image_name"  -->
-              <a  href="details.php" ><img src="{{apiUrl}}backend/noproduct.jpeg" alt="#"/>
+              <a  href="product-details/{{fopopularproductlist.product_id}}" ><img src="{{apiUrl}}backend/noproduct.jpeg" alt="#"/>
             View Details</a>
          </div>
     </div>
@@ -185,7 +188,7 @@
             <!-- <a  *ngIf="fivpopularproductlist?.image_name" href="details.php" ><img src="{{apiUrl}}backend/images/products/{{fivpopularproductlist.product_id}}/m/{{fivpopularproductlist.image_name}}" alt="#"/>
             View Details</a> -->
             <!-- *ngIf="!fivpopularproductlist?.image_name"  -->
-            <a  href="details.php" ><img src="{{apiUrl}}backend/noproduct.jpeg" alt="#"/>
+            <a  href="product-details/{{fivpopularproductlist.product_id}}" ><img src="{{apiUrl}}backend/noproduct.jpeg" alt="#"/>
             View Details</a>
          </div>
     </div>
@@ -198,7 +201,7 @@
             <!-- <a  *ngIf="sipopularproductlist?.image_name" href="details.php" ><img src="{{apiUrl}}backend/images/products/{{sipopularproductlist.product_id}}/m/{{sipopularproductlist.image_name}}" alt="#"/>
             View Details</a> -->
              <!-- *ngIf="!sipopularproductlist?.image_name"  -->
-            <a href="details.php" ><img src="{{apiUrl}}backend/noproduct.jpeg" alt="#"/>
+            <a href="product-details/{{sipopularproductlist.product_id}}" ><img src="{{apiUrl}}backend/noproduct.jpeg" alt="#"/>
             View Details</a>
          </div>
     </div>
