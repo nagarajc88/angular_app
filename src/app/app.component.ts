@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CoolLocalStorage } from 'angular2-cool-storage';
 import { User } from './_models/index';
 import { UserService } from './_services/index';
 
@@ -8,7 +9,12 @@ import { UserService } from './_services/index';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  localStorage: CoolLocalStorage;
+
   title = 'app';
-  constructor() {}
+  constructor(localStorage: CoolLocalStorage) {
+   this.localStorage = localStorage;
+  }
   ngOnInit() { }
+
 }

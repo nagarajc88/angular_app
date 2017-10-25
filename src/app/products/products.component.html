@@ -1,0 +1,71 @@
+<!-- ======================================================================================================================== -->
+<div class="container">
+ <section id="featuredProduct">
+ <h3 class="title"><span>Products</span></h3>
+  <div id="myCarouselOne" class="carousel slide">
+    <!-- Dot Indicators -->
+    <div class="carousel-inner">
+    <div class="item active">
+        <div class="row">
+            <div class="span3" *ngFor="let categoryproduct of categotyProductList" >
+                <div class="well well-small">
+                    <span class="newTag"></span>
+                    <span class="priceTag">
+                        <small class="oldPrice"><small>$</small>{{categoryproduct.price}}</small>
+                        <span class="newPrice"><small>$</small>{{categoryproduct.sp_price}}</span>
+                    </span>
+                     <!-- <a *ngIf="fproductlist?.image_name" class="displayStyle" href="#">
+                         <img src="{{apiUrl}}backend/images/products/{{fproductlist.product_id}}/m/{{fproductlist.image_name}}" alt="#"/>
+                      </a> -->
+                      <!-- *ngIf="!fproductlist?.image_name" -->
+                     <a class="displayStyle" href="#">  
+                       <img  src="{{apiUrl}}backend/noproduct.jpeg" alt="#"/>
+                     </a>
+                    <h5>Clothings</h5>
+                    <p>
+                        <a class="btn btn-warning" (click)="addToCart(categoryproduct)" > Add to <i class="icon-shopping-cart"></i></a> 
+                        <a class="btn" routerLink="/product-details/{{categoryproduct.product_id}}">view details</a>
+                    </p>
+                    <p><span class="price"><small>$</small>{{categoryproduct.sp_price}}</span></p>
+                    
+                </div>
+            </div>          
+        </div>
+     </div>
+   </div>
+</div>
+
+</section>
+
+<hr class="soften"/>
+<section id="client">
+<h3 class="title"><span>BRANDS</span></h3>
+<div id="clients" class="carousel slide">
+        <div class="carousel-inner">
+        <div class="item active">
+        <div class="span12">
+        <img src="assets/themes/images/clients/1.png" alt="#" />
+        <img src="assets/themes/images/clients/2.png" alt="#" />
+        <img src="assets/themes/images/clients/3.png" alt="#" />
+        <img src="assets/themes/images/clients/4.png" alt="#" />
+        <img src="assets/themes/images/clients/5.png" alt="#" />
+        <img src="assets/themes/images/clients/6.png" alt="#" />
+        </div>
+        </div>
+        <div class="item">
+        <div class="span12">
+        <img src="assets/themes/images/clients/1.png" alt="#" />
+        <img src="assets/themes/images/clients/8.png" alt="#" />
+        <img src="assets/themes/images/clients/9.png" alt="#" />
+        <img src="assets/themes/images/clients/10.png" alt="#" />
+        <img src="assets/themes/images/clients/11.png" alt="#" />
+        <img src="assets/themes/images/clients/12.png" alt="#" />
+        </div>
+        </div>
+</div>
+    <a class="left carousel-control" href="#clients" data-slide="prev">‹</a>
+    <a class="right carousel-control" href="#clients" data-slide="next">›</a>
+</div>
+</section>
+</div>
+  

@@ -32,7 +32,12 @@
   <span *ngIf="currentUser?.user.name" class="btn btn-mini" id="logout"><a routerLink="login">Logout</a></span>
   <span  *ngIf="!currentUser?.user.name" routerLink="login" class="btn btn-mini" id="login">Login</span>
   <a href="register.php"><span class="btn btn-mini btn-success"> Register  </span></a>
-  <a href="checkout.php"><span class="btn btn-mini btn-danger"> Cart [2] </span></a>
+  <a href="#"><span class="btn btn-mini btn-danger"> Cart <span id="mini-count">{{cartProducts?.length}}</span> </span></a>
+
+  
+<style type="text/css">
+  
+</style>
 </div>
 </div>
 </div>
@@ -48,19 +53,19 @@
                     <ul *ngIf="masterCategory?.subCategory" class="multi-column-dropdown">
                       
                       <li *ngFor="let subCat of masterCategory.subCategory" >
-                        <a href="#">{{subCat.name}}</a>
+                        <a routerLink="product-list/{{subCat.id}}">{{subCat.name}}</a>
                       </li>
 
                     </ul>
                   </div>
                   <div class="span3">
                     <ul *ngIf="subCat?.subCategory" class="multi-column-dropdown">
-                      <li *ngFor="let subChildCat of subCat.subCategory" ><a href="#">{{subChildCat.name}}</a></li>
+                      <li *ngFor="let subChildCat of subCat.subCategory" ><a routerLink="product-list/{{subCat.id}}">{{subChildCat.name}}</a></li>
                     </ul>
                   </div>
                   <div class="span3">
                     <ul *ngIf="subsChildCat?.subCategory" class="multi-column-dropdown">
-                      <li *ngFor="let childCat of subCat.subCategory"><a href="#">{{childCat.name}}</a></li>
+                      <li *ngFor="let childCat of subCat.subCategory"><a routerLink="product-list/{{subCat.id}}">{{childCat.name}}</a></li>
                     </ul>
                   </div>
               </div>

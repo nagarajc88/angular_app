@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { CoolLocalStorage } from 'angular2-cool-storage';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 
 import { apiUrl } from '../_constants/index';
@@ -8,18 +9,23 @@ import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class HomeService {
+    localStorage: CoolLocalStorage;
+
     private baseUrl1 = apiUrl+"api/first-product-list/"; 
     private baseUrl2 = apiUrl+"api/second-product-list/";
     private baseUrl3 = apiUrl+"api/third-product-list/";
-
     private baseUrl4 = apiUrl+"api/popular1-product-list/";
     private baseUrl5 = apiUrl+"api/popular2-product-list/";
     private baseUrl6 = apiUrl+"api/popular3-product-list/";
     private baseUrl7 = apiUrl+"api/popular4-product-list/";
     private baseUrl8 = apiUrl+"api/popular5-product-list/";
     private baseUrl9 = apiUrl+"api/popular6-product-list/";
+    
+    selectedProducts = [];
 
-    constructor(private http: Http) { }
+    constructor(localStorage: CoolLocalStorage, private http: Http) { 
+     this.localStorage = localStorage;
+    }
 
     getFirstProductList() {
         return this.http.get(this.baseUrl1)
@@ -99,5 +105,14 @@ export class HomeService {
             console.log(error);
             return Observable.throw(error);
         });
+    }
+    
+    getSelectedProducts() {
+       return JSON.parse( this.localStorage.getItem('itemKey'));
+    }
+
+    addCart(product){
+      this.selectedProducts.push(product);
+      this.localStorage.setItem('itemKey', JSON.stringify(this.selectedProducts));
     }
 }

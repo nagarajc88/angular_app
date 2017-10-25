@@ -1,13 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+import { CoolLocalStorage } from 'angular2-cool-storage';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ImageService, HomeService, AlertService } from '../_services/index';
 import { apiUrl } from '../_constants/index';
+
+declare var $: any;
+
 @Component({
     moduleId: module.id,
     templateUrl: 'home.component.html'
 })
  
 export class HomeComponent implements OnInit {
+    localStorage: CoolLocalStorage;
     images = [];
     firstproductlist = [];
     secondproductlist = [];
@@ -18,55 +23,68 @@ export class HomeComponent implements OnInit {
     fourpopularproductlist = [];
     fivepopularproductlist = [];
     sixpopularproductlist = [];
+    cartProducts:any;
     apiUrl = apiUrl;
-    constructor(private route: ActivatedRoute,
-        private router: Router,
-        private productlist: HomeService,
-        private image: ImageService,
-        private alertService: AlertService){}
-    ngOnInit() {
+    constructor(
+          localStorage: CoolLocalStorage,
+          private route: ActivatedRoute,
+          private router: Router,
+          private home: HomeService,
+          private image: ImageService,
+          private alertService: AlertService
+        ){
+          this.localStorage = localStorage;
+        }
 
+    ngOnInit() {
         this.image.getHomeBanners().subscribe( images => {
           this.images = images;
          });
 
-        this.productlist.getFirstProductList().subscribe( firstproductlist => {
+        this.home.getFirstProductList().subscribe( firstproductlist => {
           this.firstproductlist = firstproductlist;
          });
 
-       this.productlist.getSecondProductList().subscribe( secondproductlist => {
+       this.home.getSecondProductList().subscribe( secondproductlist => {
           this.secondproductlist = secondproductlist;
          }); 
 
-       this.productlist.getThirdProductList().subscribe( thirdproductlist => {
+       this.home.getThirdProductList().subscribe( thirdproductlist => {
           this.thirdproductlist = thirdproductlist;
          });  
 
-       this.productlist.getPopulat1ProductList().subscribe( firstpopularproductlist => {
+       this.home.getPopulat1ProductList().subscribe( firstpopularproductlist => {
           this.firstpopularproductlist = firstpopularproductlist;
          }); 
          
-      this.productlist.getPopulat2ProductList().subscribe( secondpopularproductlist => {
+      this.home.getPopulat2ProductList().subscribe( secondpopularproductlist => {
           this.secondpopularproductlist = secondpopularproductlist;
          }); 
          
-      this.productlist.getPopulat3ProductList().subscribe( thirdpopularproductlist => {
+      this.home.getPopulat3ProductList().subscribe( thirdpopularproductlist => {
           this.thirdpopularproductlist = thirdpopularproductlist;
          }); 
          
-      this.productlist.getPopulat4ProductList().subscribe( fourpopularproductlist => {
+      this.home.getPopulat4ProductList().subscribe( fourpopularproductlist => {
           this.fourpopularproductlist = fourpopularproductlist;
          }); 
          
-      this.productlist.getPopulat5ProductList().subscribe( fivepopularproductlist => {
+      this.home.getPopulat5ProductList().subscribe( fivepopularproductlist => {
           this.fivepopularproductlist = fivepopularproductlist;
          }); 
          
-      this.productlist.getPopulat6ProductList().subscribe( sixpopularproductlist => {
+      this.home.getPopulat6ProductList().subscribe( sixpopularproductlist => {
           this.sixpopularproductlist = sixpopularproductlist;
          }); 
          
-                  
+      this.cartProducts = this.home.getSelectedProducts();            
+    }
+
+    addToCart(product){
+      this.home.addCart(product);
+      this.cartProducts = this.home.getSelectedProducts();
+      var i = this.cartProducts.length;
+      $("#mini-count").html(i);
     }
    
 }

@@ -5,3 +5,4 @@ export * from './user.service';
 export * from './image.service';
 export * from './home.service';
 export * from './detail.service';
+export * from './products.service';

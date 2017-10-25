@@ -1,4 +1,4 @@
-<!-- ======================================================================================================================== -->
+<!-- ======================================================================================================================= -->
 <div class="container">
 <section id="mainCarousel">
     <div class="displayStyle">
@@ -58,7 +58,7 @@
                      </a>
                     <h5>Clothings</h5>
                     <p>
-                        <a class="btn btn-warning" href="#" > Add to <i class="icon-shopping-cart"></i></a> 
+                        <a class="btn btn-warning" (click)="addToCart(fproductlist)" > Add to <i class="icon-shopping-cart"></i></a> 
                         <a class="btn" routerLink="product-details/{{fproductlist.product_id}}">view details</a>
                     </p>
                     <p><span class="price"><small>$</small>{{fproductlist.sp_price}}</span></p>
@@ -85,7 +85,7 @@
                      </a>
                     <h5>Clothings</h5>
                     <p>
-                        <a class="btn btn-warning" href="#" > Add to <i class="icon-shopping-cart"></i></a> 
+                        <a class="btn btn-warning" (click)="addToCart(sproductlist)" > Add to <i class="icon-shopping-cart"></i></a> 
                         <a class="btn" href="product-details/{{sproductlist.product_id}}">view details</a>
                     </p>
                     <p><span class="price"><small>$</small>{{sproductlist.sp_price}}</span></p>
@@ -112,7 +112,7 @@
                      </a>
                     <h5>Clothings</h5>
                     <p>
-                        <a class="btn btn-warning" href="#" > Add to <i class="icon-shopping-cart"></i></a> 
+                        <a class="btn btn-warning" (click)="addToCart(tproductlist)" > Add to <i class="icon-shopping-cart"></i></a> 
                         <a class="btn" href="product-details/{{tproductlist.product_id}}">view details</a>
                     </p>
                     <p><span class="price"><small>$</small>{{tproductlist.sp_price}}</span></p>
